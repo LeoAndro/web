@@ -4,27 +4,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>BlogKu - Platform Blog Modern</title>
-    <!-- Meta Deskripsi untuk SEO -->
-    <meta name="description" content="BlogKu adalah platform blog modern yang menyajikan artikel berkualitas tentang teknologi, lifestyle, tips produktivitas, dan tutorial terbaru. Temukan inspirasi untuk kehidupan digital Anda."/>
-    <!-- Meta Kata Kunci (opsional, namun bisa membantu) -->
-    <meta name="keywords" content="blog, teknologi, lifestyle, tutorial, tips, produktivitas, artikel, web, modern, BlogKu"/>
-    <!-- Canonical Link untuk menghindari duplikasi konten -->
-    <link rel="canonical" href="https://www.yourblogku.com/"/> <!-- Ganti dengan URL kanonis situs Anda -->
-
-    <!-- Open Graph / Facebook Meta Tags untuk berbagi di media sosial -->
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://www.yourblogku.com/"/> <!-- Ganti dengan URL situs Anda -->
-    <meta property="og:title" content="BlogKu - Platform Blog Modern"/>
-    <meta property="og:description" content="BlogKu adalah platform blog modern yang menyajikan artikel berkualitas tentang teknologi, lifestyle, tips produktivitas, dan tutorial terbaru. Temukan inspirasi untuk kehidupan digital Anda."/>
-    <meta property="og:image" content="https://placehold.co/1200x630/000000/FFFFFF?text=BlogKu"/> <!-- Ganti dengan URL gambar logo/banner Anda -->
-
-    <!-- Twitter Card Meta Tags untuk berbagi di Twitter -->
-    <meta property="twitter:card" content="summary_large_image"/>
-    <meta property="twitter:url" content="https://www.yourblogku.com/"/> <!-- Ganti dengan URL situs Anda -->
-    <meta property="twitter:title" content="BlogKu - Platform Blog Modern"/>
-    <meta property="twitter:description" content="BlogKu adalah platform blog modern yang menyajikan artikel berkualitas tentang teknologi, lifestyle, tips produktivitas, dan tutorial terbaru. Temukan inspirasi untuk kehidupan digital Anda."/>
-    <meta property="twitter:image" content="https://placehold.co/1200x630/000000/FFFFFF?text=BlogKu"/> <!-- Ganti dengan URL gambar logo/banner Anda -->
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -35,7 +14,6 @@
         }
     </script>
     <style>
-        /* CSS untuk membatasi jumlah baris teks */
         .line-clamp-2 {
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -48,11 +26,9 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        /* Efek blur untuk header */
         .backdrop-blur-md {
             backdrop-filter: blur(12px);
         }
-        /* Efek teks gradien */
         .bg-clip-text {
             -webkit-background-clip: text;
             background-clip: text;
@@ -61,16 +37,13 @@
             color: transparent;
         }
     </style>
-    <!-- JSON-LD Schema Markup untuk membantu mesin pencari memahami konten -->
-    <script type="application/ld+json" id="schema-markup">
-    </script>
 </head>
 <body class="min-h-screen transition-colors duration-300 bg-gray-50 text-gray-900" id="body">
-    <!-- Header aplikasi -->
+    <!-- Header -->
     <header class="sticky top-0 z-50 backdrop-blur-md border-b transition-colors duration-300 bg-white/80 border-gray-200" id="header">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- Logo BlogKu -->
+                <!-- Logo -->
                 <button onclick="scrollToTop()" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
                     <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                         <span class="text-white font-bold text-sm">B</span>
@@ -80,7 +53,7 @@
                     </span>
                 </button>
 
-                <!-- Navigasi Desktop -->
+                <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="#" class="hover:text-blue-600 transition-colors font-medium">Artikel</a>
                     <a href="#" class="hover:text-blue-600 transition-colors font-medium">Kategori</a>
@@ -88,31 +61,25 @@
                     <a href="#" class="hover:text-blue-600 transition-colors font-medium">Kontak</a>
                 </nav>
 
-                <!-- Tombol Pencarian & Pengganti Tema -->
+                <!-- Search &amp; Theme Toggle -->
                 <div class="flex items-center space-x-4">
                     <button onclick="toggleSearch()" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                        <!-- Ikon Pencarian -->
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </button>
                     <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                        <!-- Ikon Matahari (mode terang) -->
                         <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
                         </svg>
-                        <!-- Ikon Bulan (mode gelap) -->
                         <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
                         </svg>
                     </button>
-                    <!-- Tombol menu mobile -->
                     <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="toggleMenu()">
-                        <!-- Ikon Menu -->
                         <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
-                        <!-- Ikon Tutup -->
                         <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
@@ -120,7 +87,7 @@
                 </div>
             </div>
 
-            <!-- Bilah Pencarian -->
+            <!-- Search Bar -->
             <div id="search-bar" class="py-4 border-t border-gray-200 dark:border-gray-700 hidden">
                 <div class="relative">
                     <input
@@ -130,17 +97,14 @@
                         class="w-full px-4 py-3 pl-10 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white border-gray-300 text-gray-900"
                         oninput="handleSearch()"
                     />
-                    <!-- Ikon Pencarian di dalam input -->
                     <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                    <!-- Tombol Hapus Pencarian -->
+                    </svg>
                     <button
                         onclick="clearSearch()"
                         id="clear-search"
                         class="absolute right-3 top-1/2 transform -translate-y-1/2 p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 hidden"
                     >
-                        <!-- Ikon Hapus -->
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
@@ -148,7 +112,7 @@
                 </div>
             </div>
 
-            <!-- Menu Mobile -->
+            <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden py-4 border-t border-gray-200 dark:border-gray-700 hidden">
                 <nav class="flex flex-col space-y-3">
                     <a href="#" class="hover:text-blue-600 transition-colors font-medium">Artikel</a>
@@ -160,7 +124,7 @@
         </div>
     </header>
 
-    <!-- Bagian Hero -->
+    <!-- Hero Section -->
     <section class="relative py-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -172,37 +136,37 @@
         </div>
     </section>
 
-    <!-- Filter Kategori -->
+    <!-- Category Filter -->
     <section class="px-4 sm:px-6 lg:px-8 mb-12">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-wrap gap-3 justify-center" id="category-filter">
-                <!-- Kategori akan diisi oleh JavaScript -->
+                <!-- Categories will be populated by JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Info Hasil Pencarian -->
+    <!-- Search Results Info -->
     <section class="px-4 sm:px-6 lg:px-8 mb-8">
         <div class="max-w-7xl mx-auto">
             <p id="search-results-info" class="text-center text-gray-600 hidden"></p>
         </div>
     </section>
 
-    <!-- Grid Posting Blog -->
+    <!-- Blog Posts Grid -->
     <section class="px-4 sm:px-6 lg:px-8 pb-20">
         <div class="max-w-7xl mx-auto">
             <div id="blog-posts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Posting blog akan diisi oleh JavaScript -->
+                <!-- Blog posts will be populated by JavaScript -->
             </div>
             
-            <!-- Tidak Ada Hasil -->
+            <!-- No Results -->
             <div id="no-results" class="text-center py-12 hidden">
                 <div class="text-6xl mb-4 text-gray-300">🔍</div>
                 <h3 class="text-xl font-semibold mb-2">Artikel tidak ditemukan</h3>
                 <p class="text-gray-600">Coba gunakan kata kunci yang berbeda atau jelajahi kategori lainnya</p>
             </div>
             
-            <!-- Tombol Muat Lebih Banyak -->
+            <!-- Load More Button -->
             <div class="text-center mt-12" id="load-more-section">
                 <button class="px-8 py-3 rounded-full font-semibold transition-all duration-200 hover:shadow-lg transform hover:scale-105 bg-white text-gray-900 hover:bg-gray-50 shadow-md">
                     Muat Artikel Lainnya
@@ -245,38 +209,68 @@
                         <li><a href="#" class="hover:text-blue-600 transition-colors">Tentang Kami</a></li>
                         <li><a href="#" class="hover:text-blue-600 transition-colors">Kontak</a></li>
                         <li><a href="#" class="hover:text-blue-600 transition-colors">Kebijakan Privasi</a></li>
-                        <li><a href="#" class="hover:text-blue-600 transition-colors">Syarat dan Ketentuan</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Syarat &amp; Ketentuan</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="mt-8 pt-8 border-t text-center border-gray-200 text-gray-600">
-                <p>© 2025 BlogKu. Semua hak dilindungi.</p>
+                <p>&copy; 2025 BlogKu. Semua hak dilindungi.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // State global untuk aplikasi
-        let isDarkMode = false; // Status mode gelap
-        let isMenuOpen = false; // Status menu mobile terbuka
-        let isSearchOpen = false; // Status bilah pencarian terbuka
-        let searchQuery = ''; // Kata kunci pencarian
-        let activeCategory = 'Semua'; // Kategori yang sedang aktif
+        // Global state
+        let isDarkMode = false;
+        let isMenuOpen = false;
+        let isSearchOpen = false;
+        let searchQuery = '';
+        let activeCategory = 'Semua';
 
-        // Data postingan blog dummy dihapus karena permintaan pengguna
-        const blogPosts = []; // Array postingan blog sekarang kosong
+        // Sample blog posts data
+        const blogPosts = [
+            {
+                id: 1,
+                title: "Panduan Lengkap Memulai Blog di Era Digital",
+                excerpt: "Pelajari cara memulai blog yang sukses dengan strategi konten yang tepat dan tips SEO terbaru untuk meningkatkan traffic organik.",
+                image: "https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=800",
+                author: "Admin Blog",
+                date: "15 Januari 2025",
+                category: "Tutorial",
+                readTime: "5 min",
+                likes: 24,
+                comments: 8
+            },
+            {
+                id: 2,
+                title: "Tren Teknologi 2025 yang Wajib Diketahui",
+                excerpt: "Eksplorasi teknologi terdepan yang akan mengubah cara kita bekerja dan berinteraksi di tahun 2025, dari AI hingga Web3.",
+                image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
+                author: "Tech Writer",
+                date: "12 Januari 2025",
+                category: "Teknologi",
+                readTime: "8 min",
+                likes: 42,
+                comments: 15
+            },
+            {
+                id: 3,
+                title: "Tips Produktivitas untuk Remote Worker",
+                excerpt: "Strategi efektif untuk meningkatkan produktivitas saat bekerja dari rumah dengan tools dan mindset yang tepat.",
+                image: "https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=800",
+                author: "Productivity Expert",
+                date: "10 Januari 2025",
+                category: "Lifestyle",
+                readTime: "6 min",
+                likes: 31,
+                comments: 12
+            }
+        ];
 
-        // Daftar kategori yang tersedia
         const categories = ["Semua", "Tutorial", "Teknologi", "Lifestyle", "Review", "Tips"];
 
-        // Fungsi untuk memformat tanggal agar lebih mudah dibaca (DD Bulan Jamboree)
-        function formatDate(dateString) {
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            return new Date(dateString).toLocaleDateString('id-ID', options);
-        }
-
-        // Fungsi untuk mengganti tema (mode terang/gelap)
+        // Theme toggle
         function toggleTheme() {
             isDarkMode = !isDarkMode;
             const body = document.getElementById('body');
@@ -288,7 +282,6 @@
             const moonIcon = document.getElementById('moon-icon');
 
             if (isDarkMode) {
-                // Terapkan kelas mode gelap
                 body.className = body.className.replace('bg-gray-50 text-gray-900', 'bg-gray-900 text-white');
                 header.className = header.className.replace('bg-white/80 border-gray-200', 'bg-gray-900/80 border-gray-700');
                 footer.className = footer.className.replace('bg-white border-gray-200', 'bg-gray-900 border-gray-700');
@@ -296,9 +289,8 @@
                 searchInput.className = searchInput.className.replace('bg-white border-gray-300 text-gray-900', 'bg-gray-800 border-gray-600 text-white placeholder-gray-400');
                 sunIcon.classList.remove('hidden');
                 moonIcon.classList.add('hidden');
-                document.documentElement.classList.add('dark'); // Tambahkan kelas 'dark' ke elemen html
+                document.documentElement.classList.add('dark');
             } else {
-                // Terapkan kelas mode terang
                 body.className = body.className.replace('bg-gray-900 text-white', 'bg-gray-50 text-gray-900');
                 header.className = header.className.replace('bg-gray-900/80 border-gray-700', 'bg-white/80 border-gray-200');
                 footer.className = footer.className.replace('bg-gray-900 border-gray-700', 'bg-white border-gray-200');
@@ -306,14 +298,14 @@
                 searchInput.className = searchInput.className.replace('bg-gray-800 border-gray-600 text-white placeholder-gray-400', 'bg-white border-gray-300 text-gray-900');
                 sunIcon.classList.add('hidden');
                 moonIcon.classList.remove('hidden');
-                document.documentElement.classList.remove('dark'); // Hapus kelas 'dark' dari elemen html
+                document.documentElement.classList.remove('dark');
             }
             
-            renderPosts(); // Render ulang postingan setelah tema berubah
-            renderCategories(); // Render ulang kategori setelah tema berubah
+            renderPosts();
+            renderCategories();
         }
 
-        // Fungsi untuk mengganti status menu mobile
+        // Menu toggle
         function toggleMenu() {
             isMenuOpen = !isMenuOpen;
             const mobileMenu = document.getElementById('mobile-menu');
@@ -331,7 +323,7 @@
             }
         }
 
-        // Fungsi untuk mengganti status bilah pencarian
+        // Search toggle
         function toggleSearch() {
             isSearchOpen = !isSearchOpen;
             const searchBar = document.getElementById('search-bar');
@@ -339,90 +331,97 @@
 
             if (isSearchOpen) {
                 searchBar.classList.remove('hidden');
-                setTimeout(() => searchInput.focus(), 100); // Fokus pada input pencarian setelah dibuka
+                setTimeout(() => searchInput.focus(), 100);
             } else {
                 searchBar.classList.add('hidden');
-                clearSearch(); // Hapus pencarian saat bilah ditutup
+                clearSearch();
             }
         }
 
-        // Fungsi untuk menangani input pencarian
+        // Handle search
         function handleSearch() {
             const searchInput = document.getElementById('search-input');
             const clearButton = document.getElementById('clear-search');
-            searchQuery = searchInput.value; // Perbarui kata kunci pencarian
+            searchQuery = searchInput.value;
 
             if (searchQuery) {
-                clearButton.classList.remove('hidden'); // Tampilkan tombol hapus jika ada teks
+                clearButton.classList.remove('hidden');
             } else {
-                clearButton.classList.add('hidden'); // Sembunyikan tombol hapus jika tidak ada teks
+                clearButton.classList.add('hidden');
             }
 
-            renderPosts(); // Render ulang postingan berdasarkan pencarian
-            updateSearchResults(); // Perbarui info hasil pencarian
+            renderPosts();
+            updateSearchResults();
         }
 
-        // Fungsi untuk menghapus pencarian
+        // Clear search
         function clearSearch() {
             const searchInput = document.getElementById('search-input');
             const clearButton = document.getElementById('clear-search');
-            searchQuery = ''; // Kosongkan kata kunci pencarian
-            searchInput.value = ''; // Kosongkan nilai input
-            clearButton.classList.add('hidden'); // Sembunyikan tombol hapus
-            renderPosts(); // Render ulang postingan
-            updateSearchResults(); // Perbarui info hasil pencarian
+            searchQuery = '';
+            searchInput.value = '';
+            clearButton.classList.add('hidden');
+            renderPosts();
+            updateSearchResults();
         }
 
-        // Fungsi untuk menggulir halaman ke atas
+        // Scroll to top
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Fungsi untuk mengatur kategori aktif
+        // Set active category
         function setActiveCategory(category) {
             activeCategory = category;
-            renderCategories(); // Render ulang kategori untuk menyorot yang aktif
-            renderPosts(); // Render ulang postingan berdasarkan kategori
-            updateSearchResults(); // Perbarui info hasil pencarian
+            renderCategories();
+            renderPosts();
+            updateSearchResults();
         }
 
-        // Fungsi untuk mendapatkan postingan yang difilter
+        // Filter posts
         function getFilteredPosts() {
-            // Karena blogPosts sekarang kosong, fungsi ini akan selalu mengembalikan array kosong
-            return [];
+            return blogPosts.filter(post => {
+                const matchesSearch = searchQuery === '' || 
+                    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    post.category.toLowerCase().includes(searchQuery.toLowerCase());
+                
+                const matchesCategory = activeCategory === "Semua" || post.category === activeCategory;
+                
+                return matchesSearch && matchesCategory;
+            });
         }
 
-        // Fungsi untuk memperbarui informasi hasil pencarian
+        // Update search results info
         function updateSearchResults() {
             const searchResultsInfo = document.getElementById('search-results-info');
             const loadMoreSection = document.getElementById('load-more-section');
             
             if (searchQuery) {
-                const filteredPosts = getFilteredPosts(); // Ini akan selalu kosong
+                const filteredPosts = getFilteredPosts();
                 searchResultsInfo.classList.remove('hidden');
-                loadMoreSection.classList.add('hidden'); // Sembunyikan tombol "Muat Lebih Banyak" saat mencari
+                loadMoreSection.classList.add('hidden');
                 
-                if (filteredPosts.length > 0) { // Kondisi ini akan selalu false
+                if (filteredPosts.length > 0) {
                     searchResultsInfo.textContent = `Ditemukan ${filteredPosts.length} artikel untuk "${searchQuery}"`;
                 } else {
                     searchResultsInfo.textContent = `Tidak ada artikel yang ditemukan untuk "${searchQuery}"`;
                 }
             } else {
                 searchResultsInfo.classList.add('hidden');
-                loadMoreSection.classList.remove('hidden'); // Tampilkan kembali tombol "Muat Lebih Banyak"
+                loadMoreSection.classList.remove('hidden');
             }
         }
 
-        // Fungsi untuk merender kategori
+        // Render categories
         function renderCategories() {
             const categoryFilter = document.getElementById('category-filter');
-            categoryFilter.innerHTML = ''; // Kosongkan kontainer kategori
+            categoryFilter.innerHTML = '';
 
             categories.forEach(category => {
                 const button = document.createElement('button');
-                button.onclick = () => setActiveCategory(category); // Atur kategori aktif saat diklik
+                button.onclick = () => setActiveCategory(category);
                 
-                // Terapkan gaya berdasarkan kategori aktif dan mode tema
                 if (activeCategory === category) {
                     button.className = 'px-6 py-2 rounded-full font-medium transition-all duration-200 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg';
                 } else {
@@ -436,21 +435,20 @@
             });
         }
 
-        // Fungsi untuk merender postingan blog
+        // Render posts
         function renderPosts() {
             const blogPostsContainer = document.getElementById('blog-posts');
             const noResults = document.getElementById('no-results');
-            const filteredPosts = getFilteredPosts(); // Ini akan selalu kosong
+            const filteredPosts = getFilteredPosts();
 
-            blogPostsContainer.innerHTML = ''; // Kosongkan kontainer postingan
+            blogPostsContainer.innerHTML = '';
 
-            if (filteredPosts.length > 0) { // Kondisi ini akan selalu false
-                noResults.classList.add('hidden'); // Sembunyikan pesan "tidak ada hasil"
-                blogPostsContainer.classList.remove('hidden'); // Tampilkan kontainer postingan
+            if (filteredPosts.length > 0) {
+                noResults.classList.add('hidden');
+                blogPostsContainer.classList.remove('hidden');
 
                 filteredPosts.forEach(post => {
                     const article = document.createElement('article');
-                    // Terapkan gaya postingan berdasarkan mode tema
                     article.className = `group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${
                         isDarkMode ? 'bg-gray-800' : 'bg-white'
                     }`;
@@ -480,18 +478,16 @@
                             <div class="flex items-center justify-between text-sm mb-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}">
                                 <div class="flex items-center space-x-4">
                                     <div class="flex items-center space-x-1">
-                                        <!-- Ikon Penulis -->
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                         </svg>
                                         <span>${post.author}</span>
                                     </div>
                                     <div class="flex items-center space-x-1">
-                                        <!-- Ikon Tanggal -->
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                         </svg>
-                                        <span>${formatDate(post.date)}</span>
+                                        <span>${post.date}</span>
                                     </div>
                                 </div>
                                 <span class="font-medium">${post.readTime}</span>
@@ -500,23 +496,20 @@
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center space-x-4">
                                     <div class="flex items-center space-x-1">
-                                        <!-- Ikon Suka -->
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                                         </svg>
-                                        <span class="text-sm">${post.likes.toString()}</span>
+                                        <span class="text-sm">${post.likes}</span>
                                     </div>
                                     <div class="flex items-center space-x-1">
-                                        <!-- Ikon Komentar -->
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                                         </svg>
-                                        <span class="text-sm">${post.comments.toString()}</span>
+                                        <span class="text-sm">${post.comments}</span>
                                     </div>
                                 </div>
                                 <button class="flex items-center space-x-1 text-blue-600 hover:text-blue-700 font-semibold group">
                                     <span>Baca</span>
-                                    <!-- Ikon Panah -->
                                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                                     </svg>
@@ -528,47 +521,19 @@
                     blogPostsContainer.appendChild(article);
                 });
             } else if (searchQuery) {
-                blogPostsContainer.classList.add('hidden'); // Sembunyikan grid postingan
-                noResults.classList.remove('hidden'); // Tampilkan pesan "tidak ada hasil"
-            } else {
-                // Tampilkan pesan "Tidak Ada Hasil" jika tidak ada postingan dan tidak ada pencarian aktif
                 blogPostsContainer.classList.add('hidden');
                 noResults.classList.remove('hidden');
             }
         }
 
-        // Fungsi untuk menghasilkan Schema Markup JSON-LD
-        function generateSchemaMarkup() {
-            const schemaMarkupElement = document.getElementById('schema-markup');
-            
-            // Schema untuk situs web secara keseluruhan
-            const websiteSchema = {
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                "name": "BlogKu",
-                "url": "https://www.yourblogku.com/",
-                "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": "https://www.yourblogku.com/?s={search_term_string}", // Ganti dengan URL pencarian Anda
-                    "query-input": "required name=search_term_string"
-                }
-            };
-
-            // Gabungkan semua schema. Karena tidak ada postingan blog, hanya sertakan WebSite.
-            const combinedSchema = [websiteSchema];
-
-            schemaMarkupElement.textContent = JSON.stringify(combinedSchema, null, 2);
-        }
-
-        // Fungsi inisialisasi halaman
+        // Initialize the page
         function init() {
-            renderCategories(); // Render kategori saat halaman dimuat
-            renderPosts(); // Render postingan saat halaman dimuat
-            updateSearchResults(); // Perbarui info hasil pencarian saat halaman dimuat
-            generateSchemaMarkup(); // Generate schema markup saat halaman dimuat
+            renderCategories();
+            renderPosts();
+            updateSearchResults();
         }
 
-        // Jalankan inisialisasi saat halaman selesai dimuat
+        // Run initialization when page loads
         document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
