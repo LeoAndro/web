@@ -109,7 +109,7 @@
                     <!-- Ikon Pencarian di dalam input -->
                     <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
+                        </svg>
                     <!-- Tombol Hapus Pencarian -->
                     <button
                         onclick="clearSearch()"
@@ -240,104 +240,8 @@
         let searchQuery = ''; // Kata kunci pencarian
         let activeCategory = 'Semua'; // Kategori yang sedang aktif
 
-        // Data postingan blog contoh
         const blogPosts = [
-            {
-                id: 1,
-                title: "Menguasai Prompt Engineering: Kunci Berinteraksi dengan AI",
-                excerpt: "Pelajari teknik-teknik canggih dalam prompt engineering untuk mendapatkan hasil terbaik dari model AI generatif.",
-                image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800",
-                author: "AI Explorer",
-                date: "28 Juni 2025",
-                category: "Teknologi",
-                readTime: "7 min",
-                likes: 55,
-                comments: 20
-            },
-            {
-                id: 2,
-                title: "Masa Depan Kerja Hybrid: Fleksibilitas dan Produktivitas",
-                excerpt: "Bagaimana model kerja hybrid membentuk ulang lingkungan kantor dan tips untuk tetap produktif di kedua skenario.",
-                image: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800",
-                author: "Workplace Innovator",
-                date: "25 Juni 2025",
-                category: "Lifestyle",
-                readTime: "6 min",
-                likes: 48,
-                comments: 18
-            },
-            {
-                id: 3,
-                title: "Review Terbaru: Smartphone Lipat Terbaik Tahun Ini",
-                excerpt: "Analisis mendalam tentang smartphone lipat terkemuka, fitur, performa, dan pengalaman pengguna.",
-                image: "https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800",
-                author: "Gadget Guru",
-                date: "20 Juni 2025",
-                category: "Review",
-                readTime: "9 min",
-                likes: 62,
-                comments: 25
-            },
-            {
-                id: 4,
-                title: "Panduan Lengkap Keamanan Siber untuk Pemula",
-                excerpt: "Langkah-langkah penting untuk melindungi diri Anda dari ancaman siber yang terus berkembang di dunia digital.",
-                image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800",
-                author: "Cyber Defender",
-                date: "18 Juni 2025",
-                category: "Tutorial",
-                readTime: "7 min",
-                likes: 40,
-                comments: 10
-            },
-            {
-                id: 5,
-                title: "Tips Fotografi Ponsel: Abadikan Momen Terbaik Anda",
-                excerpt: "Tingkatkan kualitas foto ponsel Anda dengan tips dan trik profesional untuk komposisi, pencahayaan, dan editing.",
-                image: "https://images.pexels.com/photos/1709003/pexels-photo-1709003.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800",
-                author: "Photo Enthusiast",
-                date: "15 Juni 2025",
-                category: "Tips",
-                readTime: "5 min",
-                likes: 35,
-                comments: 14
-            },
-            {
-                id: 6,
-                title: "Memulai Perjalanan Data Science Anda: Langkah Demi Langkah",
-                excerpt: "Panduan komprehensif untuk pemula yang ingin terjun ke dunia data science, dari konsep dasar hingga proyek praktis.",
-                image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800",
-                author: "Data Analyst",
-                date: "10 Juni 2025",
-                category: "Teknologi",
-                readTime: "10 min",
-                likes: 70,
-                comments: 30
-            },
-            {
-                id: 7,
-                title: "Resep Sehat dan Cepat untuk Gaya Hidup Sibuk",
-                excerpt: "Kumpulan resep makanan sehat yang mudah disiapkan, cocok untuk Anda yang memiliki jadwal padat namun ingin tetap makan bergizi.",
-                image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800",
-                author: "Healthy Chef",
-                date: "05 Juni 2025",
-                category: "Lifestyle",
-                readTime: "4 min",
-                likes: 28,
-                comments: 9
-            },
-            {
-                id: 8,
-                title: "Memaksimalkan Potensi Cloud Computing Anda",
-                excerpt: "Jelajahi berbagai layanan cloud dan strategi untuk mengoptimalkan infrastruktur Anda di cloud, dari IaaS hingga SaaS.",
-                image: "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800",
-                author: "Cloud Architect",
-                date: "01 Juni 2025",
-                category: "Teknologi",
-                readTime: "8 min",
-                likes: 50,
-                comments: 22
-            }
+            // Array ini sekarang kosong
         ];
 
         // Daftar kategori yang tersedia
