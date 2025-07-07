@@ -4,6 +4,27 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>BlogKu - Platform Blog Modern</title>
+    <!-- Meta Deskripsi untuk SEO -->
+    <meta name="description" content="BlogKu adalah platform blog modern yang menyajikan artikel berkualitas tentang teknologi, lifestyle, tips produktivitas, dan tutorial terbaru. Temukan inspirasi untuk kehidupan digital Anda."/>
+    <!-- Meta Kata Kunci (opsional, namun bisa membantu) -->
+    <meta name="keywords" content="blog, teknologi, lifestyle, tutorial, tips, produktivitas, artikel, web, modern, BlogKu"/>
+    <!-- Canonical Link untuk menghindari duplikasi konten -->
+    <link rel="canonical" href="https://www.yourblogku.com/"/> <!-- Ganti dengan URL kanonis situs Anda -->
+
+    <!-- Open Graph / Facebook Meta Tags untuk berbagi di media sosial -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.yourblogku.com/"/> <!-- Ganti dengan URL situs Anda -->
+    <meta property="og:title" content="BlogKu - Platform Blog Modern"/>
+    <meta property="og:description" content="BlogKu adalah platform blog modern yang menyajikan artikel berkualitas tentang teknologi, lifestyle, tips produktivitas, dan tutorial terbaru. Temukan inspirasi untuk kehidupan digital Anda."/>
+    <meta property="og:image" content="https://placehold.co/1200x630/000000/FFFFFF?text=BlogKu"/> <!-- Ganti dengan URL gambar logo/banner Anda -->
+
+    <!-- Twitter Card Meta Tags untuk berbagi di Twitter -->
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:url" content="https://www.yourblogku.com/"/> <!-- Ganti dengan URL situs Anda -->
+    <meta property="twitter:title" content="BlogKu - Platform Blog Modern"/>
+    <meta property="twitter:description" content="BlogKu adalah platform blog modern yang menyajikan artikel berkualitas tentang teknologi, lifestyle, tips produktivitas, dan tutorial terbaru. Temukan inspirasi untuk kehidupan digital Anda."/>
+    <meta property="twitter:image" content="https://placehold.co/1200x630/000000/FFFFFF?text=BlogKu"/> <!-- Ganti dengan URL gambar logo/banner Anda -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -40,6 +61,9 @@
             color: transparent;
         }
     </style>
+    <!-- JSON-LD Schema Markup untuk membantu mesin pencari memahami konten -->
+    <script type="application/ld+json" id="schema-markup">
+    </script>
 </head>
 <body class="min-h-screen transition-colors duration-300 bg-gray-50 text-gray-900" id="body">
     <!-- Header aplikasi -->
@@ -240,21 +264,16 @@
         let searchQuery = ''; // Kata kunci pencarian
         let activeCategory = 'Semua'; // Kategori yang sedang aktif
 
-        const blogPosts = [
-            // Array ini sekarang kosong
-        ];
+        // Data postingan blog dummy dihapus karena permintaan pengguna
+        const blogPosts = []; // Array postingan blog sekarang kosong
 
         // Daftar kategori yang tersedia
         const categories = ["Semua", "Tutorial", "Teknologi", "Lifestyle", "Review", "Tips"];
 
-        // Fungsi untuk meng-escape karakter khusus HTML
-        function escapeHtml(unsafe) {
-            return unsafe
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
+        // Fungsi untuk memformat tanggal agar lebih mudah dibaca (DD Bulan Jamboree)
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('id-ID', options);
         }
 
         // Fungsi untuk mengganti tema (mode terang/gelap)
@@ -369,18 +388,8 @@
 
         // Fungsi untuk mendapatkan postingan yang difilter
         function getFilteredPosts() {
-            return blogPosts.filter(post => {
-                // Periksa apakah postingan cocok dengan kata kunci pencarian
-                const matchesSearch = searchQuery === '' || 
-                    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    post.category.toLowerCase().includes(searchQuery.toLowerCase());
-                
-                // Periksa apakah postingan cocok dengan kategori aktif
-                const matchesCategory = activeCategory === "Semua" || post.category === activeCategory;
-                
-                return matchesSearch && matchesCategory;
-            });
+            // Karena blogPosts sekarang kosong, fungsi ini akan selalu mengembalikan array kosong
+            return [];
         }
 
         // Fungsi untuk memperbarui informasi hasil pencarian
@@ -389,11 +398,11 @@
             const loadMoreSection = document.getElementById('load-more-section');
             
             if (searchQuery) {
-                const filteredPosts = getFilteredPosts();
+                const filteredPosts = getFilteredPosts(); // Ini akan selalu kosong
                 searchResultsInfo.classList.remove('hidden');
                 loadMoreSection.classList.add('hidden'); // Sembunyikan tombol "Muat Lebih Banyak" saat mencari
                 
-                if (filteredPosts.length > 0) {
+                if (filteredPosts.length > 0) { // Kondisi ini akan selalu false
                     searchResultsInfo.textContent = `Ditemukan ${filteredPosts.length} artikel untuk "${searchQuery}"`;
                 } else {
                     searchResultsInfo.textContent = `Tidak ada artikel yang ditemukan untuk "${searchQuery}"`;
@@ -431,11 +440,11 @@
         function renderPosts() {
             const blogPostsContainer = document.getElementById('blog-posts');
             const noResults = document.getElementById('no-results');
-            const filteredPosts = getFilteredPosts();
+            const filteredPosts = getFilteredPosts(); // Ini akan selalu kosong
 
             blogPostsContainer.innerHTML = ''; // Kosongkan kontainer postingan
 
-            if (filteredPosts.length > 0) {
+            if (filteredPosts.length > 0) { // Kondisi ini akan selalu false
                 noResults.classList.add('hidden'); // Sembunyikan pesan "tidak ada hasil"
                 blogPostsContainer.classList.remove('hidden'); // Tampilkan kontainer postingan
 
@@ -449,23 +458,23 @@
                     article.innerHTML = `
                         <div class="relative overflow-hidden">
                             <img 
-                                src="${escapeHtml(post.image)}" 
-                                alt="${escapeHtml(post.title)}"
+                                src="${post.image}" 
+                                alt="${post.title}"
                                 class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                             />
                             <div class="absolute top-4 left-4">
                                 <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold rounded-full">
-                                    ${escapeHtml(post.category)}
+                                    ${post.category}
                                 </span>
                             </div>
                         </div>
                         
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
-                                ${escapeHtml(post.title)}
+                                ${post.title}
                             </h3>
                             <p class="mb-4 line-clamp-3 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}">
-                                ${escapeHtml(post.excerpt)}
+                                ${post.excerpt}
                             </p>
                             
                             <div class="flex items-center justify-between text-sm mb-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}">
@@ -475,17 +484,17 @@
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                         </svg>
-                                        <span>${escapeHtml(post.author)}</span>
+                                        <span>${post.author}</span>
                                     </div>
                                     <div class="flex items-center space-x-1">
                                         <!-- Ikon Tanggal -->
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                         </svg>
-                                        <span>${escapeHtml(post.date)}</span>
+                                        <span>${formatDate(post.date)}</span>
                                     </div>
                                 </div>
-                                <span class="font-medium">${escapeHtml(post.readTime)}</span>
+                                <span class="font-medium">${post.readTime}</span>
                             </div>
                             
                             <div class="flex items-center justify-between">
@@ -495,14 +504,14 @@
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                                         </svg>
-                                        <span class="text-sm">${escapeHtml(post.likes.toString())}</span>
+                                        <span class="text-sm">${post.likes.toString()}</span>
                                     </div>
                                     <div class="flex items-center space-x-1">
                                         <!-- Ikon Komentar -->
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                                         </svg>
-                                        <span class="text-sm">${escapeHtml(post.comments.toString())}</span>
+                                        <span class="text-sm">${post.comments.toString()}</span>
                                     </div>
                                 </div>
                                 <button class="flex items-center space-x-1 text-blue-600 hover:text-blue-700 font-semibold group">
@@ -528,11 +537,35 @@
             }
         }
 
+        // Fungsi untuk menghasilkan Schema Markup JSON-LD
+        function generateSchemaMarkup() {
+            const schemaMarkupElement = document.getElementById('schema-markup');
+            
+            // Schema untuk situs web secara keseluruhan
+            const websiteSchema = {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "BlogKu",
+                "url": "https://www.yourblogku.com/",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://www.yourblogku.com/?s={search_term_string}", // Ganti dengan URL pencarian Anda
+                    "query-input": "required name=search_term_string"
+                }
+            };
+
+            // Gabungkan semua schema. Karena tidak ada postingan blog, hanya sertakan WebSite.
+            const combinedSchema = [websiteSchema];
+
+            schemaMarkupElement.textContent = JSON.stringify(combinedSchema, null, 2);
+        }
+
         // Fungsi inisialisasi halaman
         function init() {
             renderCategories(); // Render kategori saat halaman dimuat
             renderPosts(); // Render postingan saat halaman dimuat
             updateSearchResults(); // Perbarui info hasil pencarian saat halaman dimuat
+            generateSchemaMarkup(); // Generate schema markup saat halaman dimuat
         }
 
         // Jalankan inisialisasi saat halaman selesai dimuat
